@@ -52,3 +52,20 @@ form button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Aula 05 - tabela de produtos */
+table {
+ width: 100%;
+ border-collapse: collapse;
+ background-color: white;
+ margin-top: 15px;
+}
+table th, table td {
+ border: 1px solid #ddd;
+ padding: 8px;
+ text-align: left;
+}
+table th {
+ background-color: #1f4e79;
+ color: white;
+}
