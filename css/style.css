@@ -1,71 +1,497 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-header {
-    background-color: #1f4e79;
-    color: white;
-    padding: 15px 30px;
-}
-header nav a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-}
-main {
-    padding: 20px 30px;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    color: #666;
-}
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
 
-/* Aula 03 - formulario de login */
-form {
-    max-width: 320px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 6px;
-}
- 
-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
- 
-form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+* {
     box-sizing: border-box;
 }
- 
-form button {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #1f4e79;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+
+html {
+    min-height: 100%;
+    background: #090404;
 }
 
-/* Aula 05 - tabela de produtos */
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Courier New", Courier, monospace;
+
+    color: #d6d6d6;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(120, 0, 0, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(100, 0, 0, 0.30),
+            transparent 30%
+        ),
+        #090404;
+
+    overflow-x: hidden;
+
+    position: relative;
+
+    /* Cria uma camada própria para os efeitos */
+    isolation: isolate;
+}
+
+
+/* =========================================
+   EFEITO DE NÉVOA VERMELHA
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 150vw;
+    height: 150vh;
+
+    top: -25%;
+    left: -25%;
+
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(180, 0, 0, 0.20),
+            transparent 15%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(140, 0, 0, 0.18),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(100, 0, 0, 0.20),
+            transparent 20%
+        );
+
+    filter: blur(35px);
+
+    animation: movimentoFundo 15s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+@keyframes movimentoFundo {
+
+    0% {
+        transform: translate(-5%, -5%) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(5%, 3%) rotate(3deg);
+    }
+
+    50% {
+        transform: translate(-3%, 8%) rotate(-2deg);
+    }
+
+    75% {
+        transform: translate(7%, -4%) rotate(4deg);
+    }
+
+    100% {
+        transform: translate(-5%, 5%) rotate(-3deg);
+    }
+}
+
+
+/* =========================================
+   CHUVA DE CÓDIGOS
+========================================= */
+
+body::after {
+    content:
+        "010101001 001101 010101 110010 00101 101010 001011 110101 010010 101001 011010 001101\A"
+        "101010 001101 110010 010101 101001 110101 010011 101010 001101 110010 010101 101010\A"
+        "001011 110101 010010 101001 011010 001101 101010 001101 110010 010101 101001 110101\A"
+        "010010 101001 011010 001101 101010 001011 110101 010010 101001 001101 010101 110010\A"
+        "110101 010010 101001 011010 001101 101010 001101 110010 010101 101001 110101 010011\A"
+        "101010 001101 110010 010101 101001 110101 010011 101010 001101 110010 010101 101010\A"
+        "010101 110010 00101 101010 001011 110101 010010 101001 011010 001101 101010 001101\A"
+        "110010 010101 101001 110101 010011 101010 001101 110010 010101 101010 001011 110101\A"
+        "001101 010101 110010 101010 001011 110101 010010 101001 011010 001101 101010 001101\A"
+        "101001 110101 010011 101010 001101 110010 010101 101010 001011 110101 010010 101001\A"
+        "011010 001101 101010 001101 110010 010101 101001 110101 010011 101010 001101 110010\A"
+        "010101 101010 001011 110101 010010 101001 011010 001101 101010 001101 110010 010101\A"
+        "101001 110101 010011 101010 001101 110010 010101 101010 001011 110101 010010 101001";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    padding: 20px;
+
+    font-family: "Courier New", Courier, monospace;
+
+    font-size: 14px;
+
+    line-height: 32px;
+
+    letter-spacing: 4px;
+
+    word-spacing: 12px;
+
+    color: rgba(255, 0, 0, 0.55);
+
+    white-space: pre-wrap;
+
+    overflow: hidden;
+
+    text-shadow:
+        0 0 5px rgba(255, 0, 0, 0.5),
+        0 0 10px rgba(180, 0, 0, 0.3);
+
+    animation: chuvaDigital 25s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+@keyframes chuvaDigital {
+
+    0% {
+        transform: translateY(-30%);
+    }
+
+    100% {
+        transform: translateY(30%);
+    }
+}
+
+/* =========================================
+   CONTEÚDO FICA NA FRENTE DOS EFEITOS
+========================================= */
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    background: rgba(8, 3, 3, 0.94);
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-bottom: 1px solid #650000;
+
+    box-shadow:
+        0 0 20px rgba(150, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+header nav a {
+
+    color: #999;
+
+    margin-right: 15px;
+
+    text-decoration: none;
+
+    font-family: "Courier New", monospace;
+
+    transition: 0.3s;
+}
+
+
+header nav a:hover {
+
+    color: #ff2020;
+
+    text-shadow:
+        0 0 5px red,
+        0 0 12px rgba(255, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+
+    padding: 20px 30px;
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+main h2 {
+
+    color: #d00000;
+
+    font-family: "Courier New", monospace;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px #a00000,
+        0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 10px;
+
+    color: #555;
+
+    background: rgba(5, 2, 2, 0.95);
+
+    border-top: 1px solid #400000;
+
+    margin-top: 40px;
+
+    font-family: "Courier New", monospace;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+form {
+
+    max-width: 320px;
+
+    background-color: rgba(18, 8, 8, 0.94);
+
+    color: #d6d6d6;
+
+    padding: 20px;
+
+    border-radius: 3px;
+
+    border: 1px solid #492020;
+
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.7),
+        0 0 10px rgba(120, 0, 0, 0.15);
+}
+
+
+form label {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    color: #999;
+
+    font-family: "Courier New", monospace;
+}
+
+
+form input {
+
+    width: 100%;
+
+    padding: 8px;
+
+    margin-top: 5px;
+
+    background-color: #0c0707;
+
+    color: #ddd;
+
+    border: 1px solid #432020;
+
+    font-family: "Courier New", monospace;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+form input:focus {
+
+    border-color: #b00000;
+
+    box-shadow:
+        0 0 8px rgba(180, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+form button {
+
+    margin-top: 15px;
+
+    padding: 8px 16px;
+
+    background-color: #720000;
+
+    color: white;
+
+    border: 1px solid #a00000;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-family: "Courier New", monospace;
+
+    transition: 0.3s;
+}
+
+
+form button:hover {
+
+    background-color: #a00000;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   TABELA
+========================================= */
+
 table {
- width: 100%;
- border-collapse: collapse;
- background-color: white;
- margin-top: 15px;
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: rgba(10, 5, 5, 0.94);
+
+    margin-top: 15px;
+
+    font-family: "Courier New", monospace;
 }
-table th, table td {
- border: 1px solid #ddd;
- padding: 8px;
- text-align: left;
+
+
+table th,
+table td {
+
+    border: 1px solid #352020;
+
+    padding: 8px;
+
+    text-align: left;
 }
+
+
 table th {
- background-color: #1f4e79;
- color: white;
+
+    background-color: #250707;
+
+    color: #d00000;
+
+    border-bottom: 1px solid #790000;
+
+    text-shadow:
+        0 0 5px rgba(255, 0, 0, 0.4);
+}
+
+
+table td {
+
+    color: #aaa;
+}
+
+
+table tr {
+
+    transition: 0.2s;
+}
+
+
+table tr:hover {
+
+    background-color: rgba(130, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+
+    color: #c00000;
+
+    transition: 0.3s;
+}
+
+
+a:hover {
+
+    color: #ff2222;
+
+    text-shadow:
+        0 0 7px rgba(255, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    table th,
+    table td {
+        padding: 7px;
+    }
 }
