@@ -1,3 +1,4 @@
+
 /* =========================================
    CONFIGURAÇÕES GERAIS
 ========================================= */
@@ -7,8 +8,7 @@
 }
 
 html {
-    min-height: 100%;
-    background: #090404;
+    background: #0d0b0c;
 }
 
 body {
@@ -17,32 +17,36 @@ body {
 
     font-family: "Courier New", Courier, monospace;
 
-    color: #d6d6d6;
+    color: #c9c2c4;
 
     background:
         radial-gradient(
-            circle at 20% 20%,
-            rgba(120, 0, 0, 0.35),
-            transparent 25%
+            circle at 15% 20%,
+            rgba(91, 35, 48, 0.28),
+            transparent 28%
         ),
         radial-gradient(
-            circle at 80% 80%,
-            rgba(100, 0, 0, 0.30),
+            circle at 85% 75%,
+            rgba(70, 25, 38, 0.22),
             transparent 30%
         ),
-        #090404;
+        linear-gradient(
+            135deg,
+            #0b090a,
+            #151112,
+            #0b090a
+        );
 
     overflow-x: hidden;
 
     position: relative;
 
-    /* Cria uma camada própria para os efeitos */
     isolation: isolate;
 }
 
 
 /* =========================================
-   EFEITO DE NÉVOA VERMELHA
+   TEXTURA / NÉVOA
 ========================================= */
 
 body::before {
@@ -50,32 +54,27 @@ body::before {
 
     position: fixed;
 
-    width: 150vw;
-    height: 150vh;
+    width: 130vw;
+    height: 130vh;
 
-    top: -25%;
-    left: -25%;
+    top: -15%;
+    left: -15%;
 
     background:
         radial-gradient(
-            circle at 30% 40%,
-            rgba(180, 0, 0, 0.20),
-            transparent 15%
-        ),
-        radial-gradient(
-            circle at 70% 60%,
-            rgba(140, 0, 0, 0.18),
+            circle at 25% 30%,
+            rgba(125, 45, 63, 0.18),
             transparent 18%
         ),
         radial-gradient(
-            circle at 50% 80%,
-            rgba(100, 0, 0, 0.20),
+            circle at 75% 65%,
+            rgba(100, 35, 52, 0.15),
             transparent 20%
         );
 
-    filter: blur(35px);
+    filter: blur(55px);
 
-    animation: movimentoFundo 15s ease-in-out infinite alternate;
+    animation: movimentoFundo 20s ease-in-out infinite alternate;
 
     pointer-events: none;
 
@@ -86,46 +85,33 @@ body::before {
 @keyframes movimentoFundo {
 
     0% {
-        transform: translate(-5%, -5%) rotate(0deg);
-    }
-
-    25% {
-        transform: translate(5%, 3%) rotate(3deg);
+        transform: translate(-3%, -2%);
     }
 
     50% {
-        transform: translate(-3%, 8%) rotate(-2deg);
-    }
-
-    75% {
-        transform: translate(7%, -4%) rotate(4deg);
+        transform: translate(4%, 3%);
     }
 
     100% {
-        transform: translate(-5%, 5%) rotate(-3deg);
+        transform: translate(-2%, 5%);
     }
 }
 
 
 /* =========================================
-   CHUVA DE CÓDIGOS
+   CÓDIGOS NO FUNDO
 ========================================= */
 
 body::after {
     content:
-        "010101001 001101 010101 110010 00101 101010 001011 110101 010010 101001 011010 001101\A"
-        "101010 001101 110010 010101 101001 110101 010011 101010 001101 110010 010101 101010\A"
-        "001011 110101 010010 101001 011010 001101 101010 001101 110010 010101 101001 110101\A"
-        "010010 101001 011010 001101 101010 001011 110101 010010 101001 001101 010101 110010\A"
-        "110101 010010 101001 011010 001101 101010 001101 110010 010101 101001 110101 010011\A"
-        "101010 001101 110010 010101 101001 110101 010011 101010 001101 110010 010101 101010\A"
-        "010101 110010 00101 101010 001011 110101 010010 101001 011010 001101 101010 001101\A"
-        "110010 010101 101001 110101 010011 101010 001101 110010 010101 101010 001011 110101\A"
-        "001101 010101 110010 101010 001011 110101 010010 101001 011010 001101 101010 001101\A"
-        "101001 110101 010011 101010 001101 110010 010101 101010 001011 110101 010010 101001\A"
-        "011010 001101 101010 001101 110010 010101 101001 110101 010011 101010 001101 110010\A"
-        "010101 101010 001011 110101 010010 101001 011010 001101 101010 001101 110010 010101\A"
-        "101001 110101 010011 101010 001101 110010 010101 101010 001011 110101 010010 101001";
+        "010101 001101 110010 010101 101001 110101\A"
+        "001011 110101 010010 101001 011010 001101\A"
+        "101010 001101 110010 010101 101001 110101\A"
+        "010011 101010 001101 110010 010101 101010\A"
+        "110101 010010 101001 011010 001101 101010\A"
+        "001101 110010 010101 101001 110101 010011\A"
+        "101010 001101 110010 010101 101010 001011\A"
+        "110101 010010 101001 011010 001101 101010";
 
     position: fixed;
 
@@ -137,47 +123,42 @@ body::after {
 
     padding: 20px;
 
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", monospace;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    line-height: 32px;
+    line-height: 30px;
 
     letter-spacing: 4px;
 
-    word-spacing: 12px;
-
-    color: rgba(255, 0, 0, 0.55);
+    color: rgba(150, 91, 105, 0.10);
 
     white-space: pre-wrap;
 
     overflow: hidden;
 
-    text-shadow:
-        0 0 5px rgba(255, 0, 0, 0.5),
-        0 0 10px rgba(180, 0, 0, 0.3);
-
-    animation: chuvaDigital 25s linear infinite;
-
     pointer-events: none;
 
     z-index: 0;
+
+    animation: codigoLento 20s linear infinite;
 }
 
 
-@keyframes chuvaDigital {
+@keyframes codigoLento {
 
     0% {
-        transform: translateY(-30%);
+        transform: translateY(-15%);
     }
 
     100% {
-        transform: translateY(30%);
+        transform: translateY(15%);
     }
 }
 
+
 /* =========================================
-   CONTEÚDO FICA NA FRENTE DOS EFEITOS
+   CONTEÚDO NA FRENTE
 ========================================= */
 
 body > * {
@@ -192,16 +173,16 @@ body > * {
 
 header {
 
-    background: rgba(8, 3, 3, 0.94);
+    background: rgba(13, 10, 11, 0.94);
 
-    color: white;
+    color: #ded7d9;
 
-    padding: 15px 30px;
+    padding: 18px 30px;
 
-    border-bottom: 1px solid #650000;
+    border-bottom: 1px solid #3d292f;
 
     box-shadow:
-        0 0 20px rgba(150, 0, 0, 0.25);
+        0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -211,13 +192,15 @@ header {
 
 header nav a {
 
-    color: #999;
+    color: #9b8d91;
 
-    margin-right: 15px;
+    margin-right: 18px;
 
     text-decoration: none;
 
     font-family: "Courier New", monospace;
+
+    font-size: 14px;
 
     transition: 0.3s;
 }
@@ -225,21 +208,21 @@ header nav a {
 
 header nav a:hover {
 
-    color: #ff2020;
+    color: #d8aab7;
 
     text-shadow:
-        0 0 5px red,
-        0 0 12px rgba(255, 0, 0, 0.7);
+        0 0 8px rgba(160, 80, 105, 0.45);
 }
 
 
 /* =========================================
-   CONTEÚDO PRINCIPAL
+   CONTEÚDO
 ========================================= */
 
 main {
 
-    padding: 20px 30px;
+    padding: 30px;
+
 }
 
 
@@ -249,15 +232,16 @@ main {
 
 main h2 {
 
-    color: #d00000;
+    color: #c795a3;
 
     font-family: "Courier New", monospace;
 
-    letter-spacing: 2px;
+    font-weight: normal;
+
+    letter-spacing: 3px;
 
     text-shadow:
-        0 0 5px #a00000,
-        0 0 15px rgba(255, 0, 0, 0.4);
+        0 0 12px rgba(150, 70, 90, 0.25);
 }
 
 
@@ -269,17 +253,19 @@ footer {
 
     text-align: center;
 
-    padding: 10px;
+    padding: 15px;
 
-    color: #555;
+    color: #71676a;
 
-    background: rgba(5, 2, 2, 0.95);
+    background: rgba(10, 8, 9, 0.96);
 
-    border-top: 1px solid #400000;
+    border-top: 1px solid #302326;
 
     margin-top: 40px;
 
     font-family: "Courier New", monospace;
+
+    font-size: 12px;
 }
 
 
@@ -291,19 +277,19 @@ form {
 
     max-width: 320px;
 
-    background-color: rgba(18, 8, 8, 0.94);
+    background-color: rgba(20, 16, 18, 0.92);
 
-    color: #d6d6d6;
+    color: #c9c2c4;
 
-    padding: 20px;
+    padding: 22px;
 
-    border-radius: 3px;
+    border-radius: 2px;
 
-    border: 1px solid #492020;
+    border: 1px solid #403237;
 
     box-shadow:
-        0 0 20px rgba(0, 0, 0, 0.7),
-        0 0 10px rgba(120, 0, 0, 0.15);
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
 }
 
 
@@ -311,13 +297,15 @@ form label {
 
     display: block;
 
-    margin-top: 10px;
+    margin-top: 12px;
 
-    font-weight: bold;
+    font-weight: normal;
 
-    color: #999;
+    color: #9e9296;
 
     font-family: "Courier New", monospace;
+
+    font-size: 13px;
 }
 
 
@@ -325,15 +313,15 @@ form input {
 
     width: 100%;
 
-    padding: 8px;
+    padding: 9px;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
-    background-color: #0c0707;
+    background-color: #0f0c0d;
 
-    color: #ddd;
+    color: #d8d0d3;
 
-    border: 1px solid #432020;
+    border: 1px solid #403237;
 
     font-family: "Courier New", monospace;
 
@@ -345,10 +333,10 @@ form input {
 
 form input:focus {
 
-    border-color: #b00000;
+    border-color: #815263;
 
     box-shadow:
-        0 0 8px rgba(180, 0, 0, 0.4);
+        0 0 8px rgba(130, 70, 90, 0.25);
 }
 
 
@@ -358,17 +346,17 @@ form input:focus {
 
 form button {
 
-    margin-top: 15px;
+    margin-top: 17px;
 
-    padding: 8px 16px;
+    padding: 9px 18px;
 
-    background-color: #720000;
+    background-color: #39252c;
 
-    color: white;
+    color: #d9cdd1;
 
-    border: 1px solid #a00000;
+    border: 1px solid #63404c;
 
-    border-radius: 3px;
+    border-radius: 2px;
 
     cursor: pointer;
 
@@ -380,10 +368,12 @@ form button {
 
 form button:hover {
 
-    background-color: #a00000;
+    background-color: #50313d;
+
+    color: #f0e4e8;
 
     box-shadow:
-        0 0 12px rgba(255, 0, 0, 0.5);
+        0 0 12px rgba(120, 65, 85, 0.3);
 }
 
 
@@ -397,9 +387,9 @@ table {
 
     border-collapse: collapse;
 
-    background-color: rgba(10, 5, 5, 0.94);
+    background-color: rgba(14, 11, 12, 0.94);
 
-    margin-top: 15px;
+    margin-top: 20px;
 
     font-family: "Courier New", monospace;
 }
@@ -408,9 +398,9 @@ table {
 table th,
 table td {
 
-    border: 1px solid #352020;
+    border: 1px solid #352b2e;
 
-    padding: 8px;
+    padding: 9px;
 
     text-align: left;
 }
@@ -418,20 +408,21 @@ table td {
 
 table th {
 
-    background-color: #250707;
+    background-color: #20171a;
 
-    color: #d00000;
+    color: #b9929e;
 
-    border-bottom: 1px solid #790000;
+    border-bottom: 1px solid #5a3b45;
 
-    text-shadow:
-        0 0 5px rgba(255, 0, 0, 0.4);
+    font-weight: normal;
+
+    letter-spacing: 1px;
 }
 
 
 table td {
 
-    color: #aaa;
+    color: #aaa0a3;
 }
 
 
@@ -443,7 +434,7 @@ table tr {
 
 table tr:hover {
 
-    background-color: rgba(130, 0, 0, 0.12);
+    background-color: rgba(105, 50, 68, 0.10);
 }
 
 
@@ -453,7 +444,7 @@ table tr:hover {
 
 a {
 
-    color: #c00000;
+    color: #b78998;
 
     transition: 0.3s;
 }
@@ -461,10 +452,10 @@ a {
 
 a:hover {
 
-    color: #ff2222;
+    color: #dfb6c3;
 
     text-shadow:
-        0 0 7px rgba(255, 0, 0, 0.7);
+        0 0 8px rgba(180, 100, 125, 0.35);
 }
 
 
@@ -475,23 +466,28 @@ a:hover {
 @media (max-width: 700px) {
 
     header {
+
         padding: 15px 20px;
     }
 
     main {
+
         padding: 20px;
     }
 
     form {
+
         max-width: 100%;
     }
 
     table {
+
         font-size: 13px;
     }
 
     table th,
     table td {
+
         padding: 7px;
     }
 }
