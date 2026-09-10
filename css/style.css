@@ -1,6 +1,5 @@
-
 /* =========================================
-   CONFIGURAÇÕES GERAIS
+   🐹 CONFIGURAÇÕES GERAIS - GUINEA PIG KAWAII
 ========================================= */
 
 * {
@@ -8,7 +7,7 @@
 }
 
 html {
-    background: #0d0b0c;
+    background: #fff4f7;
 }
 
 body {
@@ -17,25 +16,37 @@ body {
 
     font-family: "Courier New", Courier, monospace;
 
-    color: #c9c2c4;
+    color: #765d63;
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(91, 35, 48, 0.28),
-            transparent 28%
+            circle at 10% 10%,
+            rgba(255, 190, 210, 0.30),
+            transparent 35%
         ),
         radial-gradient(
-            circle at 85% 75%,
-            rgba(70, 25, 38, 0.22),
-            transparent 30%
+            circle at 90% 20%,
+            rgba(230, 205, 240, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255, 215, 225, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(215, 195, 235, 0.28),
+            transparent 35%
         ),
         linear-gradient(
             135deg,
-            #0b090a,
-            #151112,
-            #0b090a
+            #fff8f4,
+            #fff0f5,
+            #f8f0fa
         );
+
+    background-attachment: fixed;
 
     overflow-x: hidden;
 
@@ -46,7 +57,7 @@ body {
 
 
 /* =========================================
-   TEXTURA / NÉVOA
+   🐹 TEXTURA / NÉVOA FOFINHA
 ========================================= */
 
 body::before {
@@ -54,32 +65,58 @@ body::before {
 
     position: fixed;
 
-    width: 130vw;
-    height: 130vh;
+    inset: -20%;
 
-    top: -15%;
-    left: -15%;
+    width: 140%;
+    height: 140%;
 
     background:
         radial-gradient(
-            circle at 25% 30%,
-            rgba(125, 45, 63, 0.18),
-            transparent 18%
+            circle at 20% 30%,
+            rgba(255, 170, 195, 0.18),
+            transparent 25%
         ),
         radial-gradient(
-            circle at 75% 65%,
-            rgba(100, 35, 52, 0.15),
-            transparent 20%
+            circle at 75% 25%,
+            rgba(215, 185, 235, 0.16),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 30% 80%,
+            rgba(255, 205, 220, 0.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(210, 190, 235, 0.16),
+            transparent 25%
         );
 
-    filter: blur(55px);
+    filter: blur(45px);
 
-    animation: movimentoFundo 20s ease-in-out infinite alternate;
+    animation: movimentoFundo 18s ease-in-out infinite alternate;
 
     pointer-events: none;
 
     z-index: 0;
 }
+
+
+@keyframes movimentoFundo {
+
+    0% {
+        transform: translate(-3%, -2%) scale(1);
+    }
+
+    50% {
+        transform: translate(3%, 2%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-2%, 4%) scale(1);
+    }
+}
+
 
 
 @keyframes movimentoFundo {
@@ -99,66 +136,13 @@ body::before {
 
 
 /* =========================================
-   CÓDIGOS NO FUNDO
+   🐾 PATINHAS E CORAÇÕES NO FUNDO
 ========================================= */
 
-body::after {
-    content:
-        "010101 001101 110010 010101 101001 110101\A"
-        "001011 110101 010010 101001 011010 001101\A"
-        "101010 001101 110010 010101 101001 110101\A"
-        "010011 101010 001101 110010 010101 101010\A"
-        "110101 010010 101001 011010 001101 101010\A"
-        "001101 110010 010101 101001 110101 010011\A"
-        "101010 001101 110010 010101 101010 001011\A"
-        "110101 010010 101001 011010 001101 101010";
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    padding: 20px;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 12px;
-
-    line-height: 30px;
-
-    letter-spacing: 4px;
-
-    color: rgba(150, 91, 105, 0.10);
-
-    white-space: pre-wrap;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    animation: codigoLento 20s linear infinite;
-}
-
-
-@keyframes codigoLento {
-
-    0% {
-        transform: translateY(-15%);
-    }
-
-    100% {
-        transform: translateY(15%);
-    }
-}
 
 
 /* =========================================
-   CONTEÚDO NA FRENTE
+   🐹 CONTEÚDO NA FRENTE
 ========================================= */
 
 body > * {
@@ -168,31 +152,36 @@ body > * {
 
 
 /* =========================================
-   HEADER
+   🎀 HEADER
 ========================================= */
 
 header {
 
-    background: rgba(13, 10, 11, 0.94);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 225, 235, 0.97),
+            rgba(248, 235, 239, 0.97)
+        );
 
-    color: #ded7d9;
+    color: #735762;
 
     padding: 18px 30px;
 
-    border-bottom: 1px solid #3d292f;
+    border-bottom: 2px solid #e9b5c5;
 
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.35);
+        0 4px 20px rgba(190, 125, 145, 0.18);
 }
 
 
 /* =========================================
-   MENU
+   🌸 MENU
 ========================================= */
 
 header nav a {
 
-    color: #9b8d91;
+    color: #9a6f7d;
 
     margin-right: 18px;
 
@@ -208,15 +197,15 @@ header nav a {
 
 header nav a:hover {
 
-    color: #d8aab7;
+    color: #c45f82;
 
     text-shadow:
-        0 0 8px rgba(160, 80, 105, 0.45);
+        0 0 8px rgba(210, 120, 150, 0.35);
 }
 
 
 /* =========================================
-   CONTEÚDO
+   🐹 CONTEÚDO
 ========================================= */
 
 main {
@@ -227,12 +216,12 @@ main {
 
 
 /* =========================================
-   TÍTULOS
+   🌷 TÍTULOS
 ========================================= */
 
 main h2 {
 
-    color: #c795a3;
+    color: #bd718b;
 
     font-family: "Courier New", monospace;
 
@@ -241,12 +230,12 @@ main h2 {
     letter-spacing: 3px;
 
     text-shadow:
-        0 0 12px rgba(150, 70, 90, 0.25);
+        0 0 12px rgba(210, 130, 155, 0.25);
 }
 
 
 /* =========================================
-   RODAPÉ
+   🐾 RODAPÉ
 ========================================= */
 
 footer {
@@ -255,11 +244,12 @@ footer {
 
     padding: 15px;
 
-    color: #71676a;
+    color: #9b8088;
 
-    background: rgba(10, 8, 9, 0.96);
+    background:
+        rgba(255, 238, 244, 0.96);
 
-    border-top: 1px solid #302326;
+    border-top: 1px solid #e7c1cb;
 
     margin-top: 40px;
 
@@ -270,26 +260,25 @@ footer {
 
 
 /* =========================================
-   FORMULÁRIO
+   🎀 FORMULÁRIO
 ========================================= */
 
 form {
 
     max-width: 320px;
 
-    background-color: rgba(20, 16, 18, 0.92);
+    background-color: rgba(255, 247, 249, 0.94);
 
-    color: #c9c2c4;
+    color: #765d63;
 
     padding: 22px;
 
     border-radius: 2px;
 
-    border: 1px solid #403237;
+    border: 1px solid #e2bdc8;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.45);
-
+        0 10px 30px rgba(160, 110, 125, 0.20);
 }
 
 
@@ -301,7 +290,7 @@ form label {
 
     font-weight: normal;
 
-    color: #9e9296;
+    color: #98727d;
 
     font-family: "Courier New", monospace;
 
@@ -317,11 +306,11 @@ form input {
 
     margin-top: 6px;
 
-    background-color: #0f0c0d;
+    background-color: #fffafb;
 
-    color: #d8d0d3;
+    color: #705960;
 
-    border: 1px solid #403237;
+    border: 1px solid #dfbcc7;
 
     font-family: "Courier New", monospace;
 
@@ -333,15 +322,15 @@ form input {
 
 form input:focus {
 
-    border-color: #815263;
+    border-color: #d48da7;
 
     box-shadow:
-        0 0 8px rgba(130, 70, 90, 0.25);
+        0 0 8px rgba(210, 130, 155, 0.25);
 }
 
 
 /* =========================================
-   BOTÃO
+   🍓 BOTÃO
 ========================================= */
 
 form button {
@@ -350,13 +339,18 @@ form button {
 
     padding: 9px 18px;
 
-    background-color: #39252c;
+    background:
+        linear-gradient(
+            135deg,
+            #e7a5ba,
+            #c9a9d8
+        );
 
-    color: #d9cdd1;
+    color: #fffafc;
 
-    border: 1px solid #63404c;
+    border: 1px solid #d394aa;
 
-    border-radius: 2px;
+    border-radius: 12px;
 
     cursor: pointer;
 
@@ -368,17 +362,22 @@ form button {
 
 form button:hover {
 
-    background-color: #50313d;
+    background:
+        linear-gradient(
+            135deg,
+            #d98da7,
+            #b99acb
+        );
 
-    color: #f0e4e8;
+    color: #fff;
 
     box-shadow:
-        0 0 12px rgba(120, 65, 85, 0.3);
+        0 0 12px rgba(200, 120, 150, 0.30);
 }
 
 
 /* =========================================
-   TABELA
+   🐹 TABELA
 ========================================= */
 
 table {
@@ -387,7 +386,7 @@ table {
 
     border-collapse: collapse;
 
-    background-color: rgba(14, 11, 12, 0.94);
+    background-color: rgba(255, 248, 250, 0.95);
 
     margin-top: 20px;
 
@@ -398,7 +397,7 @@ table {
 table th,
 table td {
 
-    border: 1px solid #352b2e;
+    border: 1px solid #e5cdd3;
 
     padding: 9px;
 
@@ -408,11 +407,16 @@ table td {
 
 table th {
 
-    background-color: #20171a;
+    background:
+        linear-gradient(
+            135deg,
+            #f7dce5,
+            #eadff0
+        );
 
-    color: #b9929e;
+    color: #8c6370;
 
-    border-bottom: 1px solid #5a3b45;
+    border-bottom: 1px solid #d9adb9;
 
     font-weight: normal;
 
@@ -422,7 +426,7 @@ table th {
 
 table td {
 
-    color: #aaa0a3;
+    color: #806d72;
 }
 
 
@@ -434,17 +438,17 @@ table tr {
 
 table tr:hover {
 
-    background-color: rgba(105, 50, 68, 0.10);
+    background-color: rgba(247, 196, 213, 0.18);
 }
 
 
 /* =========================================
-   LINKS
+   💕 LINKS
 ========================================= */
 
 a {
 
-    color: #b78998;
+    color: #b66f88;
 
     transition: 0.3s;
 }
@@ -452,15 +456,15 @@ a {
 
 a:hover {
 
-    color: #dfb6c3;
+    color: #d083a0;
 
     text-shadow:
-        0 0 8px rgba(180, 100, 125, 0.35);
+        0 0 8px rgba(200, 120, 150, 0.35);
 }
 
 
 /* =========================================
-   RESPONSIVIDADE
+   🌸 RESPONSIVIDADE
 ========================================= */
 
 @media (max-width: 700px) {
