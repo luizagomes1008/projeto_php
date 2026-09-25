@@ -11,7 +11,11 @@ $resultado = mysqli_query($conexao, $sql);
 <main>
     <h2>Produtos cadastrados</h2>
     <a href="cadastrar.php">Cadastrar novo produto</a>
-
+        <?php if (isset($_SESSION['mensagem'])) { ?>
+        <p><?php echo $_SESSION['mensagem']; ?></p>
+        <?php unset($_SESSION['mensagem']); ?>
+    <?php } ?>
+    <!-- tabela de produtos continua igual -->
     <table>
         <tr>
             <th>Produto</th>

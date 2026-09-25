@@ -3,10 +3,10 @@ require __DIR__ . '/verifica_login.php';
 require __DIR__ . '/../conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //pega a tabela do banco d dados para cadastrar novo produto
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
+    $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+    $descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+    $preco = trim($_POST['preco']);
+    $quantidade = trim($_POST['quantidade']);
 
     if ($nome == "" || $preco == "" || $quantidade == "") { //Nome está vazio OU preço está vazio OU quantidade está vazia? Se qualquer um estiver vazio, entra no if.
         $mensagem = "Preencha todos os campos obrigatórios.";
@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //pega a tabela do banco d dados par
                 VALUES ('$nome', '$descricao', '$preco', '$quantidade')";
 
         if (mysqli_query($conexao, $sql)) { //"verifica conexão do sql, caso de certo, entra no if, else, erro de conexão "
+            $_SESSION['mensagem'] = "Produto cadastrado com sucesso!";    
             header('Location: listar.php'); //caso conexao fucione e os produtos sejam cadastrados, redireciona para a pagina onde esta a tabela (listar.php) com dados já atualizados
             exit;//"Redirecione o usuário e pare de executar este arquivo."
         } else {
